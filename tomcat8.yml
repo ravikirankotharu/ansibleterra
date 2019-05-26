@@ -66,9 +66,9 @@
       src: context.xml.j2
       dest: /opt/tomcat/webapps/host-manager/META-INF/context.xml
   - name: Download gameoflife.war file
-    - git:
+    git:
       repo: 'https://github.com/ravikirankotharu/gameoflife.git'
-      dest: /tmp/
+      dest: /tmp/ 
   - name: move the war file from /tmp to webaps path
     shell: mv /tmp/gameoflife.war /opt/tomcat/webapps/
   - name: changing permisssions for webapps 
