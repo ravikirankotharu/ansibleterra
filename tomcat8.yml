@@ -35,8 +35,6 @@
     shell: /home/ubuntu/tomcat/apache-tomcat-8.5.40/bin/startup.sh
   - name: copy gameoflife.war
     shell: cp /home/ubuntu/ansible_terraform_deployment/gameoflife.war /home/ubuntu/tomcat/apache-tomcat-8.5.40/webapps/
-  handlers:
-    - name: tomcat-8-restart
-      service: 
+       service: 
         name: tomcat 
         state: restarted
