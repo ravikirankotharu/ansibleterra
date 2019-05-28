@@ -67,10 +67,10 @@
       dest: /opt/tomcat/webapps/host-manager/META-INF/context.xml
   - name: Download gameoflife.war file
     get_url:
-      url: 'https://github.com/ravikirankotharu/gameoflife.git'
-      dest: /tmp/
+      url: https://s3.amazonaws.com/gameoflife-war-file/gameoflife.war
+      dest: /tmp/ 
   - name: move the war file from /tmp to webaps path
-    shell: mv /tmp/gameoflife/gameoflife.war /opt/tomcat/webapps/
+    shell: mv /tmp/gameoflife.war /opt/tomcat/webapps/
   - name: changing permisssions for webapps 
     shell: chmod 755 /opt/tomcat/webapps/gameoflife.war
     notify: 
@@ -79,4 +79,4 @@
     - name: tomcat-8-restart
       service: 
         name: tomcat 
-
+        state: restarted
